@@ -1,1 +1,30 @@
-﻿<!doctype html><h1>Hello Web</h1>
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hello Web</title>
+</head>
+<body>
+  <h1>Hello Web</h1>
+  <!-- add under the <h1> -->
+<button id="btn">Click me</button> <span id="count">0</span>
+<script>
+  var n = 0;
+  document.getElementById('btn').onclick = function () {
+    n += 1;
+    document.getElementById('count').textContent = n;
+  };
+</script>
+  <pre id="out">Open console to see the total...</pre>
+
+  <script src="./expenses-sum.js?v=2"></script>
+  <script>
+    (function () {
+      var out = document.getElementById('out');
+      var has = typeof window.TOTAL !== 'undefined';
+      var msg = has ? ('Total: $' + window.TOTAL) : 'No total yet';
+      out.textContent = msg;
+    })();
+  </script>
+</body>
+</html>
